@@ -490,7 +490,7 @@ contains
 
 #if PETSC_VERSION_GE(3,8,0)
        call VecScatterCreate(BCFamExchange(iBCGroup, sps)%nodeValLocal, IS1, &
-            zipper%localVal, PETSC_NULL_VEC, zipper%scatter, ierr)
+            zipper%localVal, PETSC_NULL_IS, zipper%scatter, ierr)
 #else
        call VecScatterCreate(BCFamExchange(iBCGroup, sps)%nodeValLocal, IS1, &
             zipper%localVal, PETSC_NULL_OBJECT, zipper%scatter, ierr)
@@ -585,6 +585,14 @@ contains
     type(oversetString), pointer :: str
     integer(kind=intType) :: nStrings, i, j, nTriSelf
 
+    if (debugZipper) then
+       open(unit=101, file="master_beforeStrings.dat", form='formatted')
+       write(101,*) 'TITLE = "Master Data" '
+       write(101,*) 'Variables = "X" "Y" "Z"'
+       call writeOversetMaster(master, 101)
+       close(101)
+    end if
+    
     call createOrderedStrings(master, strings, nStrings)
 
 
