@@ -26,8 +26,8 @@ class RegTest17(unittest.TestCase):
         '''
         import copy
         from baseclasses import AeroProblem
-        from reg_tests.commonUtils import adflowDefOpts
-        from adflow import ADFLOW
+        from commonUtils import adflowDefOpts
+        from ... import ADFLOW
         gridFile = 'input_files/conic_conv_nozzle_mb.cgns'
         integrationSurf = 'input_files/integration_plane_viscous.fmt'
 

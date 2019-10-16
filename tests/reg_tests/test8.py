@@ -26,8 +26,8 @@ class RegTest8(unittest.TestCase):
         '''
         import copy
         from baseclasses import AeroProblem
-        from reg_tests.commonUtils import standard_test, adflowDefOpts, defaultFuncList
-        from adflow import ADFLOW
+        from commonUtils import standard_test, adflowDefOpts, defaultFuncList
+        from ... import ADFLOW
         gridFile = 'input_files/CRM_wbt_scalar_jst.cgns'
 
         options = copy.copy(adflowDefOpts)

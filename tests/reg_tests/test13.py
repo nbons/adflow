@@ -27,11 +27,11 @@ class RegTest13(unittest.TestCase):
         import copy
         from mpi4py import MPI
         from baseclasses import AeroProblem
-        from adflow import ADFLOW
+        from ... import ADFLOW
         from pyspline import Curve
         from pygeo import DVGeometry
         from idwarp import USMesh
-        from reg_tests.commonUtils import adjoint_test, adflowDefOpts, IDWarpDefOpts
+        from commonUtils import adjoint_test, adflowDefOpts, IDWarpDefOpts
         comm = MPI.COMM_WORLD
 
         gridFile = 'input_files/mdo_tutorial_euler_scalar_jst.cgns'

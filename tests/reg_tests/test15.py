@@ -26,8 +26,8 @@ class RegTest15(unittest.TestCase):
         '''
         import copy, os
         from baseclasses import AeroProblem
-        from reg_tests.commonUtils import adflowDefOpts, defaultFuncList
-        from adflow import ADFLOW
+        from commonUtils import adflowDefOpts, defaultFuncList
+        from ... import ADFLOW
         gridFile = 'input_files/naca0012_rans-L2.cgns'
 
         options = copy.copy(adflowDefOpts)

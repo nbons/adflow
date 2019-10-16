@@ -26,8 +26,8 @@ class RegTest16(unittest.TestCase):
         '''
         import copy
         from baseclasses import AeroProblem
-        from reg_tests.commonUtils import adflowDefOpts
-        from adflow import ADFLOW
+        from commonUtils import adflowDefOpts
+        from ... import ADFLOW
         gridFile = 'input_files/euler_conv_nozzle.cgns'
 
         options = copy.copy(adflowDefOpts)

@@ -26,8 +26,8 @@ class RegTest9(unittest.TestCase):
         '''
         import copy
         from baseclasses import AeroProblem
-        from reg_tests.commonUtils import solution_test, adflowDefOpts, defaultFuncList
-        from adflow import ADFLOW
+        from commonUtils import solution_test, adflowDefOpts, defaultFuncList
+        from ... import ADFLOW
         gridFile = 'input_files/mdo_tutorial_euler_scalar_jst.cgns'
 
         options = copy.copy(adflowDefOpts)

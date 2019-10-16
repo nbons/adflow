@@ -27,8 +27,8 @@ class RegTest14(unittest.TestCase):
         import copy
         from mpi4py import MPI
         from baseclasses import AeroProblem
-        from reg_tests.commonUtils import adjoint_test, adflowDefOpts
-        from adflow import ADFLOW
+        from commonUtils import adjoint_test, adflowDefOpts
+        from ... import ADFLOW
         from pyspline import Curve
         from pygeo import DVGeometry
         from idwarp import USMesh
