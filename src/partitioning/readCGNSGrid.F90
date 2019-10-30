@@ -732,7 +732,7 @@ contains
        ! No family information specified.
        ! Try to read the rotation rate and center.
 
-       call cg_rotating_read_f(rotRate, rotCenter, ierr)
+       call cg_rotating_read_f(real(rotRate), real(rotCenter), ierr)
        if(ierr == error)                &
             call terminate("readZoneInfo", &
             "Something wrong when calling &
@@ -1234,9 +1234,8 @@ contains
        cgnsDoms(nZone)%conn1to1(i)%rotationAngles = zero
        cgnsDoms(nZone)%conn1to1(i)%translation    = zero
 
-
        call cg_1to1_periodic_read_f(cgnsInd, cgnsBase, nZone, i, &
-            rotCenter, rotAngles, tlation, ierr)
+            real(rotCenter), real(rotAngles), real(tlation), ierr)
        if(ierr == CG_OK)then
           call readPeriodicSubface1to1(cgnsInd, cgnsBase, nZone, i,    &
                cgnsDoms(nZone)%conn1to1(i)%connectName,                       &
@@ -2862,7 +2861,7 @@ contains
     ! Check if this is a periodic boundary.
 
     call cg_conn_periodic_read_f(cgnsInd, cgnsBase, zone, conn, &
-         rotCenter, rotAngles, tlation, ierr)
+         real(rotCenter), real(rotAngles), real(tlation), ierr)
 
     testPeriodic: if(ierr == CG_OK) then
 
@@ -3004,7 +3003,7 @@ contains
 
     ! Check if this is a periodic boundary.
     call cg_1to1_periodic_read_f(cgnsInd, cgnsBase, zone, conn, &
-         rotCenter, rotAngles, tlation, ierr)
+         real(rotCenter), real(rotAngles), real(tlation), ierr)
 
     testPeriodic: if(ierr == CG_OK) then
 
